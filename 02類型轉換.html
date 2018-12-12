@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>類型轉換</title>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+			//數據類型的轉換
+			//console.log(10 < Number('2')); //字符串的數字轉換成了數字類型
+			//隱式類型轉換（偷偷摸摸的轉）
+			//1.- * / %運算
+			//			console.log(10-"2");
+			//			console.log(10-"2");
+			//			console.log(10/"2");
+			//			console.log(10+"2");
+			//2.特殊的數據值
+			//null false undefined會被默認轉換成0
+			//true會被默認的轉換為1
+			//undefine會轉換為NaN
+
+			var a = 2;
+			//          console.log(a*null);//2 null===0
+			//          console.log(a+false);2
+			//          console.log(a*undefined);//0
+			//true會被轉換成1
+			//			console.log(a - true);
+			//			var val = true;
+			//			console.log(val + ":" + Number(val));
+			//3.大小比較
+			//字符串的大小和數字比較的時候 字符串的數字會被轉換成數字
+			//4.把數字類型轉換成布爾值的時候
+			//null undefined "" (空字符串) NaN 0
+			//			if(123) { //布爾值
+			//				alert('true')
+			//			} else {
+			//				alert('false')
+			//			}
+			//var bool = (true && false) && true; //邏輯運算符的返回值是什麽
+			/**
+			 * 1.邏輯運算符中，同樣會進行隱式轉換
+			 * 2.邏輯運算符的返回值并不是布爾值？
+			 * 運算停下來地方的值
+			 */
+			//			var bn=(1&&null)&&"a";
+			//			var bn=1 || 0;
+			//			var bn=1 && 0;
+			//var bn = false && true;
+			//console.log(bn);
+			//設置默認參數值
+			//a如果有值val就是a的值 如果沒有a的值 那麽就是0
+			//var a;//undefine
+			var fn=function(){};
+			//一個函數是可以加括號執行的 不是一個函數加括號就會報錯
+			//fn沒有被定義的時候 代碼不執行到fn()
+			fn && fn();//斷路
+			
+//			function fn(a){
+//				a=a || 0;
+//				console.log(a);
+//			}
+//			//方法參數是否傳入
+//			function fn1(argFn){
+//				argFn && argFn();
+//			}
+			//强制轉換（去銀行換錢）
+			/**
+			 * 轉數字
+			 * Number()
+			 *     不能用其他的字符，只有純數字組成的字符
+			 * parseInt()
+			 *     從頭開始提取是數字的部分，只要遇到一個不是數字那麽就停下來，然後返回值
+			 *     取整
+			 * parseFloat()
+			 *     和parseFloat一樣但是保留小數
+			 * 轉字符串
+			 *     String
+			 */
+			//console.log(String(function fn(){}));
+			//var dBox = document.getElementById("box");
+			//var w=dBox.style.width;//行内樣式
+			//var w = getComputedStyle(dBox).width; //任意的樣式
+			//var num=Number('100px');//返回轉換后的結果
+			//var num = parseInt('100px'); //返回轉換后的結果
+			//var num=parseFloat(1000.1212"");//返回轉換后的結果
+			//console.log(typeof num + ":" + num);
+			//console.log(w);
+		</script>
+	</body>
+
+</html>
